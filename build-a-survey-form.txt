@@ -1,0 +1,156 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>freeCodeCamp Survey Form</title>
+</head>
+<body>
+    
+        <h1 id="title">Web Developer's Feedback Form</h1>
+    <p id="description">Thank you for taking the time to help us improve</p>
+    
+    <form id="survey-form" action="submit" >
+        
+        <fieldset>
+            <label id="name-label" for="name">Name<input id="name" type="text" placeholder="Enter your name" required></label>
+            <label id="company-label" for="company">Company<input id="company" type="text" placeholder="Enter your company name" required></label>
+            <label id="email-label" for="email">Email<input id="email" type="email" placeholder="Enter your Email" required></label>
+            <label id="age-label" for="age">Age<input id="age" type="number" placeholder="Enter your age" min=21 max=60></label>
+            <label id="number-label" for="number">Phone no. <input id="number" type="number" min=1000000000 max=9999999999 placeholder="Enter your mobile no."></label>
+        </fieldset>
+        
+        <fieldset>
+            <label id="dropdown-label" for="dropdown">
+                Which option best describes your current role?
+                <select name="role" id="dropdown" required>
+                    <option value="">Select options</option>
+                    <option value="tech-lead">Tech Lead</option>
+                    <option value="software engineer">Software Engineer/Developer</option>
+                    <option value="hr">HR</option>
+                    <option value="student">Student</option>
+                </select>
+            </label>
+
+            <label>How did you like the website?(required)</label>
+            <label for="fantastic"><input id="fantastic" type="radio" name="rating" value="fantastic" class="inline">Fantastic!</label>
+            <label for="good"><input id="good" type="radio" name="rating" value="good" class="inline">Good</label>
+            <label for="improvement"><input id="improvement" type="radio" name="rating" value="improvement" class="inline">Needs Improvement &#128546</label>
+
+            <label>Which projects you found interesting?(required)</label>
+            <label for="mysterymurmur"><input id="mysterymurmur" type="checkbox" name="website" value="mysterymurmur" class="inline">Mysterymurmur</label>
+            <label for="tindog"><input id="tindog" type="checkbox" name="website" value="tindog" class="inline">TinDog</label>
+            <label for="blog"><input id="blog" type="checkbox" name="website" value="blog" class="inline">Blog Website</label>
+            <label for="simon"><input id="simon" type="checkbox" name="website" value="simon" class="inline">Simons Game</label>
+            <label for="defi"><input id="defi" type="checkbox" name="website" value="defi" class="inline">Decentralized Finance Bank Web App</label>
+            <label for="portfolio"><input id="portfolio" type="checkbox" name="website" value="portfolio" class="inline">Portfolio Website</label>
+
+        </fieldset>
+
+        <fieldset>
+            <label for="message">
+                Message
+                <textarea name="suggestion-message" id="message" palceholder="Write your suggestions here..." row="3" col = "30"></textarea>
+            </label>
+        </fieldset>
+
+        <input id="submit" type="submit" value="Submit"></input>
+        
+    </form>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  color: #f5f6f7;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+
+h1, p{
+  margin: 1em auto 0 auto;
+  text-align: center;
+}
+
+form{
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 1em auto;
+  padding: 0.5 0 2em 0;
+
+}
+
+
+
+label{
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.2rem 0;
+}
+
+input, select, textarea{
+  width: 100%;
+  margin: 10px 0 0 0;
+  min-height: 2em;
+}
+
+fieldset{
+  margin: 1em 0 0 0;
+  border: none;
+  border-bottom: 3px solid #3b3b4f;
+}
+
+input, textarea, select{
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+.inline{
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"]{
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1em;
+  background-color: #3b3b4f;
+  border-color: white;
+  min-width: 300px;
+}
+
+fieldset:last-of-type{
+  border-bottom: none;
+}
+
+input[type="submit"]:hover{
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1em;
+  background-color: #5e7979;
+  border-color: white;
+  min-width: 300px;
+  cursor: pointer;
+}
+
+
+
+** end of undefined **
+
