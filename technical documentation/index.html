@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>C++ STL Technical Doc</title>
+</head>
+<body>
+
+    <nav id="navbar">
+
+        <header id="C++_STL_Docuementation" onclick="window.reload()">C++ STL Documentation </header>
+
+        <ul>
+
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Components_of_STL">Components of STL</a></li>
+            <li><a class="nav-link" href="#Containers">Containers</a></li>
+            <li><a class="nav-link" href="#Sequence_Containers">Sequence Containers</a></li>
+            <li><a class="nav-link" href="#Container_Adaptors">Container Adaptors</a></li>
+            <li><a class="nav-link" href="#Associative_Containers">Associative Containers</a></li>
+            <li><a class="nav-link" href="#Unordered_Associative_Containers">Unordered Associative Containers</a></li>
+            <li><a class="nav-link" href="#Algorithms">Algorithms</a></li>
+            <li><a class="nav-link" href="#Iterators">Iterators</a></li>
+            <li><a class="nav-link" href="#Functors">Functors</a></li>
+
+        </ul>   
+
+    </nav>
+
+    <main id="main-doc">
+
+        <!-- introduction -->
+        <section class="main-section" id="Introduction">
+            
+            <header>Introduction</header>
+            
+            <p>
+                The C++ Standard Template Library (STL) is a set of template classes and functions that provides the implementation of common data structures and algorithms such as lists, stacks, arrays, sorting, searching, etc. 
+                It also provides the iterators and functors which makes it easier to work with algorithms and containers.
+            </p>
+            
+            <p>STL was originally designed by Alexander Stepanov and was later accepted as the part of C++ standard in C++ 98. It is a generalized library so we can use it with almost every data type without repeating the implementation code.</p>
+        
+            <p><span><b>Benefits of Using STL</b></span></p>
+
+            <ul>
+                <li>
+                    Code Reusability
+                    <p>STL components are generic and can be used with different data types, reducing code duplication.</p>
+                </li>
+                
+                <li>
+                    Efficiency
+                    <p>STL implementations are highly optimized, leading to efficient code execution.</p>
+                </li>
+
+                <li>
+                    Time Saving
+                    <p>Pre-built components save time and effort by eliminating the need to implement common data structures and algorithms from scratch.</p>
+                </li>
+
+                <li>
+                    Maintainability
+                    <p>STL promotes modular and maintainable code due to its well-defined interfaces.</p> 
+                </li>
+
+                <li>
+                    Error Reduction
+                    <p>STL handles memory management, reducing the risk of common errors like memory leaks.</p> 
+                </li>
+
+                <li>
+                    Flexibility
+                    <p>STL provides customization options through templates, lambdas, and functors, allowing for tailored solutions.</p> 
+                </li>
+
+            </ul> 
+
+        </section>
+
+        <!-- components -->
+        <section class="main-section" id="Components_of_STL">
+            
+            <header>Components of STL</header>
+            
+            <p>The components of STL are the features provided by Standard Template Library (STL) in C++ that can be classified into 4 types:</p>
+            
+            <ul style="list-style: number;">
+
+                <li>Containers</li>
+                <li>Algorithms</li>
+                <li>Iterators</li>
+                <li>Functors</li>
+
+            </ul>
+
+            <p>These components are designed to be efficient, flexible, and reusable, making them an integral part of modern C++ programming.</p>
+
+        </section>
+        
+        <!-- containers -->
+        <section class="main-section" id="Containers">
+            
+            <header>Containers</header>
+
+            <p>Containers are the data structures used to store objects and data according to the requirement. Each container is implemented as a template class that also contains the methods to perform basic operations on it. Every STL container is defined inside its own header file.</p>
+
+            <p>Containers can be further classified into 4 types:</p>
+
+            <ul style="list-style: number;">
+                <li>Sequence Containers</li>
+                <li>Container Adaptors</li>
+                <li>Associative Containers</li>
+                <li>Unordered Associated Containers</li>
+            </ul>
+
+
+        </section>
+
+        <!-- sequence containers -->
+        <section class="main-section" id="Sequence_Containers">
+
+            <header>Sequence Containers</header>
+
+            <p>Sequence containers store the data in the linear manner. They are also used to implement container adaptors.</p>
+
+            <p>There are 5 sequence containers in C++ STL:</p>
+
+            <ul>
+                <li>
+                    Arrays 
+                    <p>The STL array is an implementation of a compile time non-resizable array. It contains various method for common array operations.</p>
+                    <p>Example: </p>
+
+                    <code>array&lt;int> arr = {}; // creates an empty integer array</code> 
+
+                </li>
+                
+                <li>
+                    Vector 
+                    <p>An STL vector can be defined as the dynamic sized array which can be resized automatically when new elements are added or removed.</p>
+                    <p>Example: </p>
+                    <code>vector&lt;int> arr = {}; // creates an empty vector array of type integer
+                    vector&lt;int> arr_n(n); //creates a vector array of size n 
+                    vector&lt;int> arr_n0(n, 0); //creates a vector array of size n with all elements initialized to '0'
+                    </code>
+                </li>
+                
+                <li>
+                    Deque
+                    <p>Deque or Double-Ended Queue is sequence containers with the feature of expansion and contraction on both ends. It means we can add and remove the data to and from both ends.</p> 
+                    <p>Example: </p>
+                    <code> deque &lt;int> q; // creates a double-ended queue for integer variables</code>
+                </li>
+                
+                <li>
+                    Lists 
+                    <p>List container stores data in non-contiguous memory unlike vectors and only provide sequential access to the stored data. It basically implements the doubly linked list.</p>
+                    <p>Example: </p>
+                    <code>list&lt;int> li = {1,2,3}; // creates a list with given numbers</code>
+                </li>
+                
+                <li>
+                    Forward Lists 
+                    <p>Forward lists also store the data in a sequential manner like lists, but with the difference that forward list stores the location of only the next elements in the sequence. It implements the singly linked list.</p>
+                    <p>Example: </p>
+                    <code>forward_list&lt;int> = {4,5,6}; // creates a forward list of given numbers</code>
+                </li>
+            
+            </ul>
+
+        </section>
+
+        <!-- container adaptors -->
+        <section class="main-section" id="Container_Adaptors">
+            
+            <header>Container Adaptors</header>
+
+            <p>The container adapters are the type of STL containers that adapt existing container classes to suit specific needs or requirements.</p>
+
+            <p>There are 3 container adaptors in C++ STL:</p>
+
+            <ul>
+
+                <li>
+                    Stack
+                    <p>STL Stack follows the Last In First Out (LIFO) principle of element insertion and deletion. Also, these operations are performed only at one end of the stack.</p>
+                    <p>Example:</p>
+                    <code>stack&lt;int> st; // creates a stack data structure for integer variables</code>
+                </li>
+                <li>
+                    Queue 
+                    <p>STL Queue follows the First In First Out (FIFO) principle, means the element are inserted first are removed first and the elements inserted last are removed at last. It uses deque container by default.</p>
+                    <p>Example:</p>
+                    <code>queue&lt;int> q; // creates a queue data structure for integer variables</code>
+                </li>
+                <li>
+                    Priority Queue 
+                    <p>STL Priority Queue does not follow any of the FIFO or LIFO principle, but the deletion of elements is done on the basis of its priority. So, the element with the highest (by default) is always removed first. By default, it uses vector as underlying container.</p>
+                    <p>Example:</p>
+                    <code>priority_queue&lt;int> pq; // creates a priority queue data structure for integer variables</code>
+                </li>
+            
+            </ul>
+
+        </section>
+        
+        <!-- associative containers -->
+        <section class="main-section" id="Associative_Containers">
+            
+            <header>Associative Containers</header>
+            
+            <p>Associative containers are the type of containers that store the elements in a sorted order based on keys rather than their insertion order.</p>
+            
+            <p>There are 4 associative containers in C++ STL:</p>
+            
+            <ul>
+
+                <li>
+                    Sets 
+                    <p>STL Set is a type of associative container in which each element has to be unique because the value of the element identifies it. By default, the values are stored in ascending order.</p>
+                    <p>Example:</p>
+                    <code>set&lt;int> s; // creates a set data structure for integers</code>
+                </li>
+
+                <li>
+                    Maps
+                    <p>STL Maps are associative containers that store elements in the form of a key-value pair. The keys have to be unique and the container is sorted on the basis of the values of the keys.</p>
+                    <p>Example:</p>
+                    <code>map&lt;string,int> mp; // creates a map data structure for string variable as key and integer variables as value` </code>
+                </li>
+
+                <li>
+                    Multisets
+                    <p>STL Multiset is similar to the set container except that it can store duplicate values.</p>
+                    <p>Example:</p>
+                    <code>multiset&lt;int> mul_set; // creates a multiset data structure</code>
+                </li>
+                
+                <li>
+                    Multimaps
+                    <p>STL Multimap is similar to a map container but allows multiple mapped values to have same keys.</p>
+                    <p>Example:</p>
+                    <code>multimap&lt;string, int> mul_mp; // creates a multimap data structure</code>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- unordered associative containers -->
+        <section class="main-section" id="Unordered_Associative_Containers">
+
+            <header>Unordered Associative Containers</header>
+            
+            <p>Unordered associative containers store the data in no particular order, but they allow the fastest insertion, deletion and search operations among all the container types in STL.</p>
+            
+            <p>There are 4 unordered associative containers in C++ STL:</p>
+
+            <ul>
+
+                <li>
+                    Unordered Set
+                    <p> STL Unordered Set stores the unique keys in the form of hash table. The order is randomized but insertion, deletion and search are fast.</p>
+                    <p>Example:</p>
+                    <code>undordered_set&lt;int> un_st; // creates an unordered set</code>
+                </li>
+                
+                <li>
+                    Unordered Multiset
+                    <p> STL Unordered Multiset works similarly to an unordered set but can store multiple copies of the same key.</p>
+                    <p>Example:</p>
+                    <code>unordered_multiset&lt;int> un_mul_st; // creates an unordered multiset</code>
+                </li>
+                
+                <li>
+                    Unordered Map
+                    <p> STL Unordered Map stores the key-value pair in a hash table, where key is hashed to find the storage place.</p>
+                    <p>Example:</p>
+                    <code>unordered_map&lt;string, int> un_mp; // creates an unordered multimap</code>
+                </li>
+                
+                <li>
+                    Unordered Multimap
+                    <p> STL Unordered Multimap container is similar to unordered map, but it allows multiple values mapped to the same key.</p>
+                    <p>Example:</p>
+                    <code>unordered_multimap&lt;string,int> un_mul_mp; // creates an unordered multimap</code>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- algorithms -->
+        <section class="main-section" id="Algorithms">
+            
+            <header>Algorithms</header>
+            
+            <p>STL algorithms offer a wide range of functions to perform common operations on data (mainly containers). These functions implement the most efficient version of the algorithm for tasks such as sorting, searching, modifying and manipulating data in containers, etc. All STL algorithms are defined inside the &lt;algorithm> and &lt;numeric> header file.</p>
+            
+            <p>There is no formal classification of STL algorithms, but we can group them into two types based on the type of operations they perform</p>
+
+            <p><b>Manipulative Algorithms:</b></p>
+            
+            <ul>
+                <p>Manipulative algorithms perform operations that modifies the elements of the given container or rearrange their order.</p>
+                
+                <p>Some of the common manipulative algorithm includes:</p>
+                
+                <ul>
+
+                    <li>
+                        copy
+                        <p> Copies a specific number of elements from one range to another.</p>
+                        <p>Example:</p>
+                        <code>// copies the arr1 to arr2 starting from arr1's first index to arr1's last index and copy destination starts from arr2's first index
+                            // copy(start_iter1, end_iter1, start_iter2);
+                            copy(arr1.begin(), arr1.end(), arr2.start());</code>
+                    </li>
+                    
+                    <li>
+                        fill
+                        <p> Assigns a specified value to all elements in a range.</p>
+                        <p>Example:</p>
+                        <code>// fills the array element within a given range with a given value 
+                            //range [begin, end)
+                            fill(vect.begin() + 2, vect.end() - 1, 4);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        transform
+                        <p> Applies a function to each element in a range and stores the result in another range.</p>
+                        <p>Example:</p>
+                        <code>// applies a specific operation on a range of elements and store the result in another range
+                            transform(arr.begin(), arr.end(), arr2.begin(), [](int a){return a+1;});
+                        </code>
+                    </li>
+                    
+                    <li>
+                        replace
+                        <p> Replaces all occurrences of a specific value in a range with a new value.</p>
+                        <p>Example:</p>
+                        <code>// replaces values in range of provided iterators
+                            // void replace (ForwardIterator first, ForwardIterator last, const T& old_value, const T& new_value)
+                            replace(arr.begin(), arr.end(), 201, 404);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        swap
+                        <p> Exchanges the values of two variables.</p>
+                        <p>Example:</p>
+                        <code>// swaps the given values of given variables
+                            swap(a, b);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        reverse
+                        <p> Reverses the order of elements in a range.</p>
+                        <p>Example:</p>
+                        <code>// reverses the order of elements in a given range
+                            reverse(arr.begin(), arr.end());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        rotate
+                        <p> Rotates the elements in a range such that a specific element becomes the first.</p>
+                        <p>Example:</p>
+                        <code>// rotates element of a given range in left or right direction such that element pointed to by a specified iterator becomes the new first element of the range.
+                            rotate(arr.begin(), arr.begin() + 2, arr.end());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        remove
+                        <p> Removes all elements with a specified value from a range but does not reduce the container size.</p>
+                        <p>Example:</p>
+                        <code>// removes an element from a specified range
+                            auto ne = remove(v.begin(), v.end(), 3);
+                            v.erase(ne, v.end());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        unique
+                        <p> Removes consecutive duplicate elements from a range.</p>
+                        <p>Example:</p>
+                        <code>// removes duplicates of any element present consecutively in a range [first, last)
+                            unique(v.begin(), v.begin() + 12);
+                        </code>
+                    </li>
+
+
+                </ul>
+    
+            </ul>
+
+            <p><b>Non-Manipulative Algorithms</b></p>
+
+            <ul>
+                <p>Non-manipulating algorithms are the type of algorithms provided by the Standard Template Library (STL) that operate on elements in a range without altering their values or the order of the elements.</p>
+
+                <p>The below are the few examples of the STL's non-manipulative algorithms:</p>
+
+                <ul>
+                    
+                    <li>
+                        max_element
+                        <p> Find the maximum element in the given range.</p>
+                        <p>Example:</p>
+                        <code>// finds the max element in a given range and returns its iterator
+                            max_element(arr.begin(), arr.end());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        min_element 
+                        <p> To find the minimum element in the given range.</p>
+                        <p>Example:</p>
+                        <code>// finds minimum element in a given range and returns its iterator
+                            min_element(arr.begin(), arr.end());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        accumulate
+                        <p> Finds the sum of the elements of the given range.</p>
+                        <p>Example:</p>
+                        <code>// computes the sum of elements in a given range with some initial value
+                            // accumulate(start, end, initial_sum_value);
+                            accumulate(arr.begin(), arr.end(), 0);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        count
+                        <p> Counts the occurrences of given element in the range.</p>
+                        <p>Example:</p>
+                        <code>// counts the frequency of an element in a given range
+                            count(arr.begin(), arr.end(), 10);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        find
+                        <p> Returns an iterator to the first occurrence of an element in the range.</p>
+                        <p>Example:</p>
+                        <code>// finds and returns the iterator to first occurence of an element
+                            find(arr.begin(), arr.end(), 2);
+                        </code>
+                    </li>
+                    
+                    <li>
+                        is_permutation
+                        <p> Checks if one range is a permutation of another.</p>
+                        <p>Example:</p>
+                        <code>// checks if the given range is permutation of the another
+                            is_permutation(arr.begin(), arr.end(), arr2.begin());
+                        </code>
+                    </li>
+                    
+                    <li>
+                        is_sorted
+                        <p> Checks if the elements in a range are sorted in non-decreasing order.</p>
+                        <p>Example:</p>
+                        <code>// returns true if given range is sorted, false otherwise
+                            is_sorted(arr.begin(), arr.end());
+                        </code>
+                    </li>
+                    
+
+                </ul>
+
+            </ul>
+
+        </section>
+        
+        <!-- iterators -->
+        <section class="main-section" id="Iterators">
+            
+            <header>Iterators</header>
+
+            <p>Iterators are the pointer like objects that are used to point to the memory addresses of STL containers. They are one of the most important components that contributes the most in connecting the STL algorithms with the containers. Iterators are defined inside the &lt;iterator> header file.</p>
+
+            <p>In C++ STL, iterators are of 5 types:</p>
+
+            <ul>
+
+                <li>
+                    Input Iterators
+                    <p> Input Iterators can be used to read values from a sequence once and only move forward.</p>
+                </li>
+                
+                <li>
+                    Output Iterators
+                    <p> Output Iterators can be used to write values into a sequence once and only move forward.</p>
+                </li>
+                
+                <li>
+                    Forward Iterators
+                    <p> Forward Iterators combine the features of both input and output iterators.</p>
+                </li>
+                
+                <li>
+                    Bidirectional Iterators
+                    <p> Bidirectional Iterators support all operations of forward iterators and additionally can move backward.</p>
+                </li>
+                
+                <li>
+                    Random Access Iterator
+                    <p> Random Access Iterators support all operations of bidirectional iterators and additionally provide efficient random access to elements.</p>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- functors -->
+        <section class="main-section" id="Functors">
+            
+            <header>Functors</header>
+            
+            <p>Functors are objects that can be treated as though they are a function. Functors are most commonly used along with STL algorithms. It overloads the function-call operator () and allows us to use an object like a function. There are many predefined functors in C++ STL that are defined inside the &lt;functional> header file.</p>
+        
+        </section>
+
+
+    </main>
+
+</body>
+</html>
