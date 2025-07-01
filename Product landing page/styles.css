@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap');
+
+:root{
+    --border-color: black;
+    --background-color: #eec470;
+    /* --font-color: #694207; */
+    --font-color: #372c04;
+}
+
+body{
+    font-family: 'Cherry Cream Soda';
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+
+button:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+#header{
+    display: block;
+}
+
+#nav-bar{
+    opacity: 1;
+    display: flex;
+    position: fixed;
+    top: 0;
+    /* overflow: auto;     */
+    border-bottom: 1px solid var(--border-color);
+    height: fit-content;
+    width: 100%;
+    background-color: var(--background-color);
+}
+#nav-bar img{
+    width: 100px;
+}
+
+.logo{
+    display: flex;
+    width: fit-content;
+}
+.logo:hover{
+    cursor: pointer;
+}
+
+
+.nav-btns{
+    font-size: 1.4rem;
+    font-family: inherit;
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+}
+.nav-link:hover{
+    cursor: pointer;
+}
+
+.nav-div{
+    width: 40%;
+}
+
+
+#main-section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.main-page{
+    text-align: center;
+}
+
+img[alt="guitar image"]{
+    width: 2.5vw;
+}
+
+img[alt="main image"]{
+    width: 50%;
+    border-radius: 20px;
+}
+
+
+#features{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 70vh;   
+}
+
+.feature-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7vh auto;
+    width: 50%;
+}
+.feature-description h1{
+    margin: 0 50px;
+}
+
+
+#pricing{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 80vh; */
+    flex-wrap: wrap;
+    margin: 200px 0px;
+}
+.card{
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 20px 20px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+}
+.card h2{
+    background-color: var(--font-color);
+    color: var(--background-color);
+    margin: 0;
+    height: 30px;
+}
+
+.card > ul{
+    font-size: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+
+#contact{
+    height: 30vh;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input{
+    border-radius: 5px;
+}
+
+input[type = "email"]{
+    width: 150%;
+    height: 30px;
+    background-color: var(--font-color);
+    color: var(--background-color);
+    font-size: 1rem;
+}
+input[type="email"]::placeholder{
+    color: var(--background-color);
+    font-size: 1rem;
+}
+
+input[type="submit"]{
+    width: 80px;
+    height: 40px;
+    background-color: var(--background-color);
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--font-color);
+    color: var(--background-color);
+}
+
+@media (max-width: 1580px){
+    #main-section{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1000px){
+    img[alt="main image"]{
+        width: 70%;
+    }
+}
+
+
+/* collapse button navbar */
+/* @media (max-width: 700px){
+
+} */
